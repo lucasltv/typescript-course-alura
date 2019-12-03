@@ -1,5 +1,5 @@
 {
-  "name": "typescript-course-alura",
+  "name": "alurabank",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,16 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc -w"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lucasltv/typescript-course-alura.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lucasltv/typescript-course-alura/issues"
-  },
-  "homepage": "https://github.com/lucasltv/typescript-course-alura#readme",
   "devDependencies": {
     "typescript": "^2.3.2"
   }
