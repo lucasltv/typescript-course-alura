@@ -1,8 +1,9 @@
-class NegociacoesView extends View<Negociacoes> {
+namespace Views {
+    export class NegociacoesView extends Views.View<Negociacoes> {
 
-    template(negociacoes: Negociacoes): string {
+        template(negociacoes: Negociacoes): string {
 
-        return `
+            return `
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
@@ -16,7 +17,7 @@ class NegociacoesView extends View<Negociacoes> {
 
             <tbody>
             ${negociacoes.toArray().map((negociacao, index) =>
-            `
+                `
                 <tr>
                     <td>${index + 1}</td>
                     <td>${negociacao.data}</td>
@@ -25,12 +26,13 @@ class NegociacoesView extends View<Negociacoes> {
                     <td>${negociacao.volume}</td>
                 </tr>
             `
-        ).join("")}
+            ).join("")}
             </tbody>
 
             <tfoot>
             </tfoot>
         </table>
         `;
+        }
     }
 }

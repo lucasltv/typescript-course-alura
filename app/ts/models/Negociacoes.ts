@@ -6,6 +6,7 @@ class Negociacoes {
     }
 
     toArray(): Negociacao[] {
-        return [].concat(this._negociacoes); //Programação defensiva: retorna uma referencia diferente para this._negociacoes (para evitar alterar)
+        //Programação defensiva: retorna uma referencia diferente para this._negociacoes (para evitar alterar)
+        return [].concat(this._negociacoes);
     }
 }

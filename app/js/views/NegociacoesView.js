@@ -1,6 +1,8 @@
-class NegociacoesView extends View {
-    template(negociacoes) {
-        return `
+var Views;
+(function (Views) {
+    class NegociacoesView extends Views.View {
+        template(negociacoes) {
+            return `
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
@@ -28,5 +30,7 @@ class NegociacoesView extends View {
             </tfoot>
         </table>
         `;
+        }
     }
-}
+    Views.NegociacoesView = NegociacoesView;
+})(Views || (Views = {}));
