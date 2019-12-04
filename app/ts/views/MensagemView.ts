@@ -1,8 +1,8 @@
 class MensagemView extends View<string> {
 
     update(text: string): void {
-        this._elemento.innerHTML = this.template(text);
-        this._elemento.setAttribute("style", 'display: block');
+        this._elemento.html(this.template(text));
+        this._elemento.show();
         setTimeout(this.hide.bind(this), 2000);
     }
 
@@ -11,6 +11,6 @@ class MensagemView extends View<string> {
     }
 
     hide(): void {
-        this._elemento.setAttribute("style", 'display: none');
+        this._elemento.hide();
     }
 }
