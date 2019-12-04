@@ -1,3 +1,4 @@
+import { NegociacaoController } from './controllers/NegociacaoController';
 const controller = new NegociacaoController();
 
 //Comentário oculto no js compilado
