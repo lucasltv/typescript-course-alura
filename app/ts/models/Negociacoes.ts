@@ -8,6 +8,6 @@ export class Negociacoes {
 
     toArray(): Negociacao[] {
         //Programação defensiva: retorna uma referencia diferente para this._negociacoes (para evitar alterar)
-        return [].concat(this._negociacoes);
+        return ([] as Negociacao[]).concat(this._negociacoes);
     }
 }
