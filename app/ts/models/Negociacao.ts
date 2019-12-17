@@ -1,4 +1,4 @@
-import { DaysOfWeek } from '../enums/DaysOfWeek';
+import { DiasDaSemana } from '../enums/DiasDaSemana';
 export class Negociacao {
 
     constructor(readonly data: Date, readonly quantidade: number, readonly valor: number) { }
@@ -11,6 +11,6 @@ export class Negociacao {
      * ehFinalDeSemana
      */
     public ehFinalDeSemana(): boolean {
-        return this.data.getDay() === DaysOfWeek.Domingo || this.data.getDay() === DaysOfWeek.Sabado;
+        return this.data.getDay() === DiasDaSemana.Domingo || this.data.getDay() === DiasDaSemana.Sabado;
     }
 }

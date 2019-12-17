@@ -1,11 +1,11 @@
-System.register(["../enums/DaysOfWeek"], function (exports_1, context_1) {
+System.register(["../enums/DiasDaSemana"], function (exports_1, context_1) {
     "use strict";
-    var DaysOfWeek_1, Negociacao;
+    var DiasDaSemana_1, Negociacao;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (DaysOfWeek_1_1) {
-                DaysOfWeek_1 = DaysOfWeek_1_1;
+            function (DiasDaSemana_1_1) {
+                DiasDaSemana_1 = DiasDaSemana_1_1;
             }
         ],
         execute: function () {
@@ -19,7 +19,7 @@ System.register(["../enums/DaysOfWeek"], function (exports_1, context_1) {
                     return this.quantidade * this.valor;
                 }
                 ehFinalDeSemana() {
-                    return this.data.getDay() === DaysOfWeek_1.DaysOfWeek.Domingo || this.data.getDay() === DaysOfWeek_1.DaysOfWeek.Sabado;
+                    return this.data.getDay() === DiasDaSemana_1.DiasDaSemana.Domingo || this.data.getDay() === DiasDaSemana_1.DiasDaSemana.Sabado;
                 }
             };
             exports_1("Negociacao", Negociacao);

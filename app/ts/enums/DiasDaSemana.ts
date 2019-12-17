@@ -1,4 +1,4 @@
-export enum DaysOfWeek {
+export enum DiasDaSemana {
     Domingo = 0,
     Segunda, //Implicitamente = 1
     Terca, //Implicitamente = 2
@@ -7,5 +7,3 @@ export enum DaysOfWeek {
     Sexta, //Implicitamente = 5
     Sabado //Implicitamente = 6
 }
-
-
