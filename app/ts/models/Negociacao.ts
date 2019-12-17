@@ -11,6 +11,6 @@ export class Negociacao {
      * ehFinalDeSemana
      */
     public ehFinalDeSemana(): boolean {
-        return this.data.getDay() === DaysOfWeek.Domingo || this.data.getDay() == DaysOfWeek.Sabado;
+        return this.data.getDay() === DaysOfWeek.Domingo || this.data.getDay() === DaysOfWeek.Sabado;
     }
 }

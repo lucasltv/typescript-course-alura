@@ -19,7 +19,7 @@ System.register(["../enums/DaysOfWeek"], function (exports_1, context_1) {
                     return this.quantidade * this.valor;
                 }
                 ehFinalDeSemana() {
-                    return this.data.getDay() === DaysOfWeek_1.DaysOfWeek.Domingo || this.data.getDay() == DaysOfWeek_1.DaysOfWeek.Sabado;
+                    return this.data.getDay() === DaysOfWeek_1.DaysOfWeek.Domingo || this.data.getDay() === DaysOfWeek_1.DaysOfWeek.Sabado;
                 }
             };
             exports_1("Negociacao", Negociacao);
