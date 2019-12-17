@@ -1,6 +1,5 @@
 import { NegociacoesView, MensagemView } from '../views/index';
 import { Negociacoes, Negociacao } from '../models/index';
-import { DaysOfWeek } from '../enums/DaysOfWeek';
 export class NegociacaoController {
 
     private _inputData: JQuery;
@@ -19,17 +18,15 @@ export class NegociacaoController {
     adiciona(event: Event): void {
         event.preventDefault();
 
-        let date = new Date(this._inputData.val().replace(/-/g, ','));
-        if (date.getDay() == DaysOfWeek.Domingo || date.getDay() == DaysOfWeek.Sabado) {
-            this._mensagemView.update("Somente dias úteis!");
-            return;
-        }
-
         const negociacao = new Negociacao(
-            date,
+            new Date(this._inputData.val().replace(/-/g, ',')),
             parseInt(this._inputQuantidade.val()),
             parseFloat(this._inputValor.val())
         );
+
+        if (negociacao.ehFinalDeSemana()) {
+            return this._mensagemView.update("Somente dias úteis!");
+        }
 
         this._negociacoes.adiciona(negociacao);
         this._negociacoesView.update(this._negociacoes);
