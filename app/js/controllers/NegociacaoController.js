@@ -1,6 +1,6 @@
-System.register(["../views/index", "../models/index"], function (exports_1, context_1) {
+System.register(["../views/index", "../models/index", "../enums/DaysOfWeek"], function (exports_1, context_1) {
     "use strict";
-    var index_1, index_2, NegociacaoController;
+    var index_1, index_2, DaysOfWeek_1, NegociacaoController;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -9,6 +9,9 @@ System.register(["../views/index", "../models/index"], function (exports_1, cont
             },
             function (index_2_1) {
                 index_2 = index_2_1;
+            },
+            function (DaysOfWeek_1_1) {
+                DaysOfWeek_1 = DaysOfWeek_1_1;
             }
         ],
         execute: function () {
@@ -23,7 +26,12 @@ System.register(["../views/index", "../models/index"], function (exports_1, cont
                 }
                 adiciona(event) {
                     event.preventDefault();
-                    const negociacao = new index_2.Negociacao(new Date(this._inputData.val().replace(/-/g, ',')), parseInt(this._inputQuantidade.val()), parseFloat(this._inputValor.val()));
+                    let date = new Date(this._inputData.val().replace(/-/g, ','));
+                    if (date.getDay() == DaysOfWeek_1.DaysOfWeek.Domingo || date.getDay() == DaysOfWeek_1.DaysOfWeek.Sabado) {
+                        this._mensagemView.update("Somente dias úteis!");
+                        return;
+                    }
+                    const negociacao = new index_2.Negociacao(date, parseInt(this._inputQuantidade.val()), parseFloat(this._inputValor.val()));
                     this._negociacoes.adiciona(negociacao);
                     this._negociacoesView.update(this._negociacoes);
                     this._mensagemView.update("Negociação adicionada com sucesso!");
