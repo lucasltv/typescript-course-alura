@@ -5,6 +5,7 @@ System.register([], function (exports_1, context_1) {
         return function (target, propertyKey, descriptor) {
             const metodoOriginal = descriptor.value;
             descriptor.value = function (...args) {
+                console.log(`Parâmetros passados para o método ${propertyKey}: ${JSON.stringify(args)}`);
                 const retorno = metodoOriginal.apply(this, args);
                 return retorno;
             };
